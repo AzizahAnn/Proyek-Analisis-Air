@@ -6,6 +6,8 @@ import os
 import pandas as pd
 
 # load data
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_csv(os.path.join(BASE_DIR, 'main_data.csv.gz'))
 df = pd.read_csv('main_data.csv.gz')
 
 # CONFIG
