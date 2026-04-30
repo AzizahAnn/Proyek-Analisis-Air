@@ -5,16 +5,12 @@ import seaborn as sns
 import os
 import pandas as pd
 
-# load data
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-df = pd.read_csv(os.path.join(BASE_DIR, 'main_data.csv.gz'))
-df = pd.read_csv('main_data.csv.gz')
-
 # CONFIG
 st.set_page_config(page_title="Air Quality Dashboard", layout="wide")
 
 # LOAD DATA
-df = pd.read_csv('main_data.csv')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_parquet(os.path.join(BASE_DIR, 'main_data.parquet'))
 
 st.title("🌫️ Air Quality Dashboard Beijing")
 st.markdown("Analisis kualitas udara berdasarkan PM2.5 dan polutan lainnya")
