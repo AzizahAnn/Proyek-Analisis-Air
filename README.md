@@ -17,7 +17,7 @@ Proyek ini bertujuan untuk menganalisis kualitas udara di Beijing berdasarkan da
 submission/
 ├── dashboard/
 │   ├── dashboard.py
-│   └── main_data.csv
+│   └── main_data.parquet
 ├── notebook.ipynb
 ├── README.md
 ├── requirements.txt
@@ -39,7 +39,7 @@ pip install -r requirements.txt
 ### Terminal / CMD
 
 ```
-pip install streamlit pandas matplotlib seaborn scikit-learn
+pip install streamlit pandas matplotlib seaborn scikit-learn pyarrow
 ```
 
 ---
