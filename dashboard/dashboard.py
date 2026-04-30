@@ -2,6 +2,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import zipfile
+import os
+import pandas as pd
+
+# unzip jika belum diekstrak
+if not os.path.exists('main_data.csv'):
+    with zipfile.ZipFile('main_data.zip', 'r') as zip_ref:
+        zip_ref.extractall('.')
+
+# load data
+df = pd.read_csv('main_data.csv')
 
 # CONFIG
 st.set_page_config(page_title="Air Quality Dashboard", layout="wide")
