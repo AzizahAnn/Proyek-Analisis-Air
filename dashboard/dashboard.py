@@ -7,7 +7,8 @@ import seaborn as sns
 st.set_page_config(page_title="Air Quality Dashboard", layout="wide")
 
 # LOAD DATA
-df = pd.read_csv('main_data.csv')
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_parquet(os.path.join(BASE_DIR, 'main_data.parquet'))
 
 df.fillna(df.median(numeric_only=True), inplace=True)
 
